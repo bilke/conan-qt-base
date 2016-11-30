@@ -4,7 +4,7 @@ import os
 
 # This easily allows to copy the package in other user or channel
 channel = os.getenv("CONAN_CHANNEL", "testing")
-username = os.getenv("CONAN_USERNAME", "osechet")
+username = os.getenv("CONAN_USERNAME", "bilke")
 
 class QtTestConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
@@ -30,5 +30,3 @@ class QtTestConan(ConanFile):
             self.run("%s %s" % (os.sep.join([".", "bin", "helloworld"]), "conan"))
             self.run("%s %s" % (os.sep.join([".", "bin", "helloworld2"]), "conan"))
             #self.run("%s %s" % (os.sep.join([".", "bin", "hellogui"]), "conan"))
-
-
