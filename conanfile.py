@@ -50,7 +50,7 @@ class QtConan(ConanFile):
         """ Define your project building. You decide the way of building it
             to reuse it later in any other project.
         """
-        args = ["-opensource", "-confirm-license", "-nomake examples", "-nomake tests", "-feature-xmlschema", "-prefix %s" % self.package_folder]
+        args = ["-opensource", "-confirm-license", "-nomake examples", "-nomake tests", "-feature-QTreeView", "-prefix %s" % self.package_folder]
         if not self.options.shared:
             args.insert(0, "-static")
         if self.settings.build_type == "Debug":
