@@ -50,7 +50,7 @@ class QtConan(ConanFile):
         """ Define your project building. You decide the way of building it
             to reuse it later in any other project.
         """
-        args = ["-opensource", "-confirm-license", "-nomake examples", "-nomake tests", "-prefix %s" % self.package_folder]
+        args = ["-opensource", "-confirm-license", "-nomake examples", "-nomake tests", "-feature-xmlschema", "-prefix %s" % self.package_folder]
         if not self.options.shared:
             args.insert(0, "-static")
         if self.settings.build_type == "Debug":
@@ -128,7 +128,8 @@ class QtConan(ConanFile):
     def package_info(self):
         libs = ['Concurrent', 'Core', 'DBus',
                 'Gui', 'Network', 'OpenGL',
-                'Sql', 'Test', 'Widgets', 'Xml']
+                'Sql', 'Test', 'Widgets', 'Xml',
+                'XmlPatterns']
 
         self.cpp_info.libs = []
         self.cpp_info.includedirs = ["include"]
